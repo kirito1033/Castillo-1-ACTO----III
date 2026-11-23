@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "imagenes": [
+    {
+      "id": "amor1.jpg",
+      "titulo": "Donde empieza lo bonito",
+      "archivo": "amor1.jpg",
+      "descripcion": "Hay encuentros que llegan sin hacer ruido y terminan llenándolo todo de luz. Ojalá nunca te falten personas con quienes puedas ser tú y sentir que estás en casa."
+    },
+    {
+      "id": "amor2.jpg",
+      "titulo": "Un lugar a tu lado",
+      "archivo": "amor2.jpg",
+      "descripcion": "El amor también vive en las cosas pequeñas: escuchar con atención, compartir una risa y quedarse cerca cuando el día pesa. A veces, el lugar más bonito no es un sitio, sino una compañía."
+    },
+    {
+      "id": "amor3.jpg",
+      "titulo": "Cada pieza nos acerca",
+      "archivo": "amor3.jpg",
+      "descripcion": "No hace falta que todo encaje desde el principio. Algunas de las historias más bonitas se construyen despacio, con paciencia, cuidado y ganas de seguir eligiéndose."
+    },
+    {
+      "id": "amor4.jpg",
+      "titulo": "Nuestro pequeño infinito",
+      "archivo": "amor4.jpg",
+      "descripcion": "Hay instantes que duran muy poco y, aun así, se quedan para siempre. Que la vida te regale muchos de esos momentos que después recordarás con una sonrisa."
+    },
+    {
+      "id": "castillo1.jpg",
+      "titulo": "El castillo de los sueños",
+      "archivo": "castillo1.jpg",
+      "descripcion": "Los sueños también se construyen pieza a pieza. No importa si hoy solo puedes colocar una: cada pequeño paso cuenta para levantar ese lugar que imaginas."
+    },
+    {
+      "id": "castillo2.jpg",
+      "titulo": "Un refugio entre murallas",
+      "archivo": "castillo2.jpg",
+      "descripcion": "Que nunca te falte un refugio donde descansar de las prisas, dejar a un lado las preocupaciones y sentir que no tienes que demostrar nada para merecer cariño."
+    },
+    {
+      "id": "castillo3.jpg",
+      "titulo": "La torre de la esperanza",
+      "archivo": "castillo3.jpg",
+      "descripcion": "Incluso desde una ventana pequeña se puede descubrir un horizonte inmenso. Ojalá siempre encuentres algo que despierte tu curiosidad y te dé ganas de mirar un poco más allá."
+    },
+    {
+      "id": "castillo4.jpg",
+      "titulo": "El reino de las pequeñas cosas",
+      "archivo": "castillo4.jpg",
+      "descripcion": "No todos los tesoros brillan ni se guardan en un cofre. Algunos son una conversación sin prisa, una mano cercana o la tranquilidad de compartir el silencio con alguien."
+    },
+    {
+      "id": "castillo5.jpg",
+      "titulo": "Una puerta hacia lo imposible",
+      "archivo": "castillo5.jpg",
+      "descripcion": "Que la curiosidad te abra caminos y que el miedo no decida siempre por ti. Todavía hay lugares, personas y alegrías que no conoces y que pueden hacer más bonita tu historia."
+    },
+    {
+      "id": "navidad 2.jpg",
+      "titulo": "Luces que nos reúnen",
+      "archivo": "navidad 2.jpg",
+      "descripcion": "Más allá de los adornos, la magia está en compartir. Que siempre haya un lugar para ti en la mesa y alguien que se alegre de verte llegar."
+    },
+    {
+      "id": "navidad 3.jpg",
+      "titulo": "El regalo de estar juntos",
+      "archivo": "navidad 3.jpg",
+      "descripcion": "Los regalos más valiosos no siempre llevan un lazo. A veces son tiempo, atención y esas ganas sinceras de acompañarnos que convierten un día cualquiera en un recuerdo especial."
+    },
+    {
+      "id": "navidad.jpg",
+      "titulo": "Un hogar encendido",
+      "archivo": "navidad.jpg",
+      "descripcion": "Ojalá encuentres calor en los días fríos, compañía en los silencios y motivos para celebrar lo sencillo. Que la luz más bonita sea la que nace de sentirte querido."
+    },
+    {
+      "id": "rosas.jpg",
+      "titulo": "Todo lo bonito florece a su tiempo",
+      "archivo": "rosas.jpg",
+      "descripcion": "No tienes que florecer al ritmo de nadie más. Date tiempo, cuida de ti y reconoce lo que ya has crecido. También hay belleza en los procesos que avanzan despacio."
+    }
+  ]
+}

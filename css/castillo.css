@@ -1,0 +1,224 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background: #a8cce5;
+}
+
+#contenedor {
+  position: fixed;
+  inset: 0;
+}
+
+#contenedor canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#menu {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgb(12 22 30 / 45%);
+}
+
+#menu[hidden],
+#mira[hidden] {
+  display: none;
+}
+
+.panel {
+  width: min(100%, 380px);
+  padding: 32px;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 16px;
+  background: rgb(22 32 40 / 92%);
+  color: white;
+  text-align: center;
+}
+
+.panel h1 {
+  margin: 0 0 12px;
+}
+
+.panel p {
+  line-height: 1.6;
+}
+
+#boton-iniciar {
+  width: 100%;
+  margin-top: 12px;
+  padding: 14px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: #dfc38a;
+  color: #262014;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#boton-iniciar:hover {
+  background: #efdaa9;
+}
+
+.instrucciones {
+  margin-top: 24px;
+  color: #cbd5df;
+  font-size: 14px;
+}
+
+#estado {
+  margin-bottom: 0;
+  color: #ffd79b;
+  font-size: 13px;
+}
+
+#mira {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 22px;
+  text-shadow: 0 1px 4px black;
+  pointer-events: none;
+}
+
+#ayuda {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  z-index: 5;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 95%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgb(0 0 0 / 40%);
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  pointer-events: none;
+}:root {
+  --mi-fondo: #070a0d;
+  --mi-marfil: #f2eadb;
+  --mi-suave: #c3bdb1;
+  --mi-oro: #c9a66b;
+  --mi-borde: rgba(214,193,156,.27);
+}
+
+/* Los estilos se limitan al menú para no alterar vídeos o rompecabezas. */
+#menu.mi-inicio, #menu.mi-inicio * { box-sizing: border-box; }
+#menu.mi-inicio[hidden], #menu.mi-inicio [hidden] { display: none !important; }
+#menu.mi-inicio {
+  position: fixed; inset: 0; z-index: 20; display: flex; align-items: center;
+  padding: clamp(28px,7vw,110px); overflow-y: auto; overflow-x: hidden;
+  color: var(--mi-marfil); font-family: 'Trebuchet MS','Segoe UI',sans-serif;
+  background: linear-gradient(90deg,rgba(4,7,8,.94) 0%,rgba(5,8,10,.76) 43%,rgba(5,8,10,.16) 100%);
+  isolation: isolate;
+}
+#menu .mi-vigneta { position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(0deg,rgba(3,6,8,.7),transparent 24%),radial-gradient(ellipse at 55% 45%,transparent 32%,rgba(2,5,7,.5) 100%); }
+#menu button, #menu select { font: inherit; }
+#menu button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+#menu .mi-contenido { width: min(610px,100%); padding-block: 86px 74px; animation: mi-elevar .8s ease both; }
+#menu .mi-sobretitulo, #menu .mi-tarjeta-etiqueta { color: var(--mi-oro); font-size: .7rem; font-weight: 700; letter-spacing: .25em; }
+#menu .mi-sobretitulo { display: flex; align-items: center; gap: 14px; margin: 0 0 27px; line-height: 1.7; }
+#menu .mi-linea { display: inline-block; width: 37px; height: 1px; flex-shrink: 0; background: var(--mi-oro); }
+#menu #mi-titulo { max-width: 650px; margin: 0; color: var(--mi-marfil); font: 400 clamp(3.7rem,7.8vw,7.8rem)/.98 Georgia,'Times New Roman',serif; letter-spacing: -.055em; text-wrap: balance; }
+#menu #mi-titulo em { display: block; color: #ddc8a3; font-weight: 400; }
+#menu .mi-descripcion { max-width: 445px; margin: 28px 0 31px; color: #ddd8ce; font-size: clamp(.95rem,1.4vw,1.06rem); line-height: 1.85; white-space: pre-line; }
+#menu .mi-boton-principal { display: inline-flex; align-items: center; justify-content: space-between; gap: 30px; min-width: 260px; max-width: 100%; min-height: 54px; padding: 15px 19px; border: 1px solid rgba(225,196,147,.65); border-radius: 0; background: rgba(28,28,25,.63); color: var(--mi-marfil); cursor: pointer; transition: background .2s ease,transform .2s ease; text-align: left; }
+#menu .mi-boton-principal:hover { background: rgba(164,124,74,.35); transform: translateY(-2px); }
+#menu .mi-flecha { color: var(--mi-oro); font-size: 1.3rem; }
+#menu .mi-enlaces { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 16px; }
+#menu .mi-boton-texto { padding: 8px 0; min-height: 44px; border: 0; border-bottom: 1px solid var(--mi-borde); background: none; color: var(--mi-marfil); font-size: .78rem; cursor: pointer; }
+#menu .mi-boton-texto span { margin-left: 9px; color: var(--mi-oro); }
+#menu .mi-boton-texto:hover { color: var(--mi-oro); }
+#menu .mi-boton-texto:disabled { opacity: .4; cursor: default; }
+#menu .mi-pista { margin: 18px 0 0; color: #aaa79f; font-size: .78rem; line-height: 1.6; }
+#menu .mi-estado { max-width: 460px; margin: 12px 0 0; color: #edc695; font-size: .82rem; line-height: 1.6; }
+#menu .mi-estado:empty { display: none; }
+#menu .mi-barra { position: absolute; top: 0; left: 0; right: 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 22px; padding: 25px clamp(20px,4vw,58px); }
+#menu .mi-marca { display: flex; gap: 12px; align-items: center; font: 1.1rem Georgia,serif; }
+#menu .mi-simbolo { color: var(--mi-oro); font-size: 2.3rem; line-height: 1; }
+#menu .mi-marca small { display: block; margin-top: 5px; color: #c3b4a0; font: .55rem 'Trebuchet MS',sans-serif; letter-spacing: .22em; }
+#menu .mi-barra-acciones { display: flex; align-items: center; gap: 20px; }
+#menu .mi-calidad-label { display: flex; align-items: center; gap: 9px; min-height: 44px; color: #c8bcaa; font-size: .73rem; }
+#menu #mi-calidad { max-width: 150px; min-height: 44px; border: 1px solid var(--mi-borde); padding: 7px 8px; background: #142020e8; color: var(--mi-marfil); border-radius: 0; cursor: pointer; }
+#menu .mi-pie { position: absolute; left: clamp(22px,4vw,58px); right: clamp(22px,4vw,58px); bottom: 25px; display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; pointer-events: none; }
+#menu .mi-pie p { max-width: 370px; margin: 0; color: #c9beac; font-size: .59rem; letter-spacing: .12em; line-height: 1.8; }
+#menu .mi-pie > span { display: flex; align-items: center; gap: 14px; color: #ddd1bb; font-size: .65rem; letter-spacing: .15em; }
+#menu .mi-tarjeta { position: absolute; z-index: 3; right: clamp(18px,4vw,70px); top: 50%; transform: translateY(-50%); width: min(420px,calc(100vw - 36px)); max-height: 76dvh; overflow: auto; padding: 38px 32px 28px; border: 1px solid rgba(218,193,151,.38); background: linear-gradient(145deg,rgba(19,26,26,.98),rgba(9,15,17,.98)); box-shadow: 0 25px 70px #0009; animation: mi-aparecer .25s ease; }
+#menu .mi-cerrar { position: absolute; top: 8px; right: 10px; width: 44px; height: 44px; padding: 0; border: 0; background: none; color: var(--mi-marfil); font-size: 1.8rem; cursor: pointer; }
+#menu .mi-tarjeta h2 { margin: 18px 16px 18px 0; color: var(--mi-marfil); font: 400 clamp(1.7rem,3vw,2.25rem)/1.18 Georgia,serif; }
+#menu .mi-separador { width: 48px; height: 1px; margin-bottom: 18px; background: var(--mi-oro); }
+#menu .mi-tarjeta p, #menu .mi-tarjeta li { color: #dad7cf; font-size: .9rem; line-height: 1.75; white-space: pre-line; }
+#menu .mi-tarjeta p { margin: 0; }
+#menu .mi-tarjeta ul { padding-left: 19px; margin-bottom: 0; }
+#menu .mi-tarjeta li + li { margin-top: 7px; }
+#menu .mi-tarjeta-final { display: block; margin-top: 23px; color: var(--mi-oro); font-size: .66rem; letter-spacing: .25em; }
+#menu button:focus-visible, #menu select:focus-visible { outline: 2px solid #f0d6a7; outline-offset: 5px; }
+@keyframes mi-elevar { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes mi-aparecer { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 850px) { #menu .mi-tarjeta { position: fixed; top: auto; bottom: max(16px,env(safe-area-inset-bottom)); left: 16px; right: 16px; width: auto; max-height: 76dvh; transform: none; } }
+@media (max-width: 650px) {
+  #menu.mi-inicio { align-items: flex-end; padding: 24px; background: linear-gradient(0deg,rgba(3,7,8,.97),rgba(4,7,8,.76) 58%,rgba(4,7,8,.24)); }
+  #menu .mi-contenido { padding-top: 150px; padding-bottom: 78px; }
+  #menu #mi-titulo { font-size: clamp(3rem,12.5vw,5.2rem); }
+  #menu .mi-sobretitulo { font-size: .59rem; margin-bottom: 20px; gap: 10px; letter-spacing: .18em; }
+  #menu .mi-descripcion { margin: 21px 0 24px; font-size: .91rem; line-height: 1.7; }
+  #menu .mi-barra { padding: max(16px,env(safe-area-inset-top)) 16px 12px; }
+  #menu .mi-marca { font-size: .86rem; gap: 8px; } #menu .mi-simbolo { font-size: 1.9rem; } #menu .mi-marca small { font-size: .46rem; }
+  #menu .mi-barra-acciones { flex-direction: column; align-items: flex-end; gap: 4px; }
+  #menu .mi-calidad-label { font-size: .65rem; gap: 5px; } #menu #mi-calidad { max-width: 116px; font-size: .7rem; }
+  #menu #mi-pantalla-completa { font-size: .65rem; min-height: 35px; }
+  #menu .mi-boton-principal { width: 100%; min-width: 0; }
+  #menu .mi-enlaces { gap: 20px; } #menu .mi-pie { left: 24px; right: 24px; bottom: max(19px,env(safe-area-inset-bottom)); }
+  #menu .mi-pie p { max-width: 180px; font-size: .5rem; letter-spacing: .08em; } #menu .mi-pie > span { font-size: .5rem; gap: 7px; } #menu .mi-pie .mi-linea { width: 20px; }
+}
+@media (max-height: 600px) { #menu.mi-inicio { align-items: flex-start; } #menu .mi-contenido { padding-top: 100px; padding-bottom: 85px; } #menu #mi-titulo { font-size: clamp(2.8rem,7vw,4.6rem); } #menu .mi-descripcion { margin: 18px 0; } #menu .mi-pie { position: absolute; bottom: 18px; } }
+@media (prefers-reduced-motion: reduce) { #menu.mi-inicio *, #menu.mi-inicio *::before, #menu.mi-inicio *::after { animation: none !important; transition: none !important; } }
+
+/* ISLA ESMERALDA · interfaz adicional, sin alterar paneles de las salas */
+:root{--ir-oro:#e3c58b;--ir-verde:#183e35;--ir-tinta:#091e1b}
+#menu.mi-inicio{background:linear-gradient(90deg,rgba(4,23,19,.96),rgba(7,29,25,.78) 43%,rgba(6,24,21,.12));font-family:'Segoe UI',sans-serif}
+#menu #mi-titulo em{color:#e5c98f}#menu .mi-sobretitulo{color:#b5d8bd}#menu .mi-boton-principal{background:linear-gradient(120deg,#315c49,#193f34);border:1px solid #dfc58f88;border-radius:12px;box-shadow:0 12px 40px #0003}
+#menu .mi-boton-principal:hover{background:#3c7158}#menu .mi-tarjeta{border-radius:18px;background:linear-gradient(145deg,#183c32,#0a211d)}
+#menu #mi-calidad{border-radius:8px}#menu .mi-marca small{color:#a7c5b2}
+#ir-hud{position:fixed;inset:0;z-index:7;pointer-events:none;color:#f4eedc;font-family:'Segoe UI',sans-serif}
+#ir-hud[hidden],#ir-hud [hidden],#ir-opciones[hidden]{display:none!important}
+.ir-top{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;background:linear-gradient(#061a1c99,transparent)}
+.ir-emblema{font:600 11px 'Segoe UI',sans-serif;letter-spacing:.24em;color:#f1dbac}
+#ir-hud button,#ir-opciones button{border:1px solid #dabd8066;border-radius:9px;padding:10px 14px;background:#12332eea;color:#f3e5c4;font:inherit;cursor:pointer;pointer-events:auto;min-height:42px}
+#ir-hud button:hover,#ir-opciones button:hover{background:#35644e}
+.ir-quest{margin:35px 24px 0;padding:18px 20px;width:270px;border:1px solid #d6c18944;border-radius:14px;background:linear-gradient(120deg,#102e29ed,#102e29b8);box-shadow:0 10px 35px #0002}
+.ir-quest small{font-size:10px;letter-spacing:.2em;color:#d8bd83}.ir-quest h3{font:normal 24px Georgia,serif;margin:9px 0 15px}.ir-quest p{font-size:12px;line-height:1.6;color:#d1dfd0;margin:6px 0}#ir-tiempo{color:#f4d58f;font-variant-numeric:tabular-nums}
+#ir-mapa{position:absolute;right:24px;top:90px;width:164px;height:164px;border-radius:50%;border:3px solid #d5ba7e99;box-shadow:0 10px 25px #0005;opacity:.92}
+#ir-hablar{position:absolute;left:50%;top:63%;transform:translateX(-50%);box-shadow:0 8px 30px #0005;max-width:90%}
+#ir-aviso{position:absolute;bottom:85px;left:50%;transform:translateX(-50%);width:max-content;max-width:min(560px,90%);border:1px solid #d6bd8244;border-radius:12px;padding:15px 22px;background:#0b2924f2;line-height:1.6;text-align:center;font-size:14px;box-shadow:0 8px 35px #0005}
+#ir-opciones{position:fixed;inset:0;z-index:50;overflow-y:auto;background:#041410d9;display:flex;align-items:flex-start;justify-content:center;padding:24px;backdrop-filter:blur(8px)}
+#ir-opciones .ir-panel{position:relative;width:min(620px,100%);margin:auto;padding:38px;border:1px solid #bfa57577;border-radius:20px;background:linear-gradient(145deg,#193e34,#0c2520);color:#eee9d7;box-shadow:0 25px 90px #0008}
+#ir-opciones small{font-size:10px;color:#dbc38d;letter-spacing:.2em}#ir-opciones h2{font:normal clamp(25px,4vw,36px) Georgia,serif;margin:14px 0 28px;max-width:90%}
+#ir-opciones label{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:48px;border-bottom:1px solid #e3cf9b20;font-size:13px}
+#ir-opciones select{max-width:62%;padding:9px;border:1px solid #c6b07d66;border-radius:7px;background:#0b241f;color:#f0e8d1;font:inherit}
+#ir-opciones input[type=range]{width:48%;accent-color:#e1c488}#ir-opciones input[type=checkbox]{width:19px;height:19px;accent-color:#bfa36a}
+#ir-opciones .ir-cerrar{position:absolute;right:12px;top:10px;font-size:24px;background:transparent;border:0}
+.ir-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:24px}#ir-opciones p{font-size:12px;line-height:1.7;color:#b6cebd}#ir-opciones #ir-borrar{color:#f2bfab}
+#ir-hud button:focus-visible,#ir-opciones button:focus-visible,#ir-opciones input:focus-visible,#ir-opciones select:focus-visible{outline:2px solid #f0d69d;outline-offset:3px}
+#ayuda{border:1px solid #dbca9d33;background:#0b2922c9;border-radius:20px;color:#e6e1c9;line-height:1.7}
+@media(max-width:650px){.ir-top{padding:12px}.ir-emblema{font-size:9px}.ir-quest{margin:4px 12px;width:195px;padding:12px}.ir-quest h3{font-size:20px;margin:5px 0 8px}.ir-quest p{font-size:11px}#ir-mapa{right:12px;top:73px;width:108px;height:108px}#ir-aviso{bottom:220px;font-size:12px;padding:12px}#ir-opciones{padding:12px}#ir-opciones .ir-panel{padding:28px 18px}#ir-opciones label{gap:8px;font-size:12px}#ir-hablar{top:47%}#ir-pausa{visibility:hidden}}
+@media(max-height:500px){.ir-quest{margin-top:0;width:210px;padding:10px 15px}.ir-quest h3{font-size:20px;margin:5px 0}.ir-quest p{font-size:10px}#ir-mapa{width:105px;height:105px;top:70px}#ir-aviso{bottom:15px;max-width:45%;font-size:11px}#ir-hablar{top:58%}}
